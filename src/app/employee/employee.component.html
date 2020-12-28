@@ -1,0 +1,28 @@
+<app-header></app-header>
+<div class="container mt-10">
+    <h1>Employee List </h1>
+<button  class="btn btn-primary mt-5 mb-5" [routerLink]="['employee/add/0']">Add Employee</button>
+    <table class="table">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+           
+        <tr *ngFor="let emp of employeeList">
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.email}}</td>
+            <td>{{emp.phone}}</td>
+            <td><button class="btn btn-primary" [routerLink]="['employee/edit/',emp.id]">Edit</button> </td>
+            <td><button class="btn btn-primary" (click)="onDelete(emp.id)" >X</button> </td>
+
+
+        </tr>
+    </tbody>
+    </table>
+</div>
